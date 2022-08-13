@@ -11,35 +11,50 @@ li {
   /*font-family: 'Volkhov', serif;*/
 }
 
-header {
-  position: sticky;
-  top: 0;
+body {
+  max-width: 1620px;
+}
+
+nav {
   right: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 1);
   display: flex;
-  z-index: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar {
+  --bs-navbar-padding-y: 0;
+  --bs-navbar-nav-link-padding-x: 2%;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  --bs-gutter-x: 0;
 }
 
 .header_logo {
   background-color: rgba(255, 251, 251, 1);
-  width: 13%;
+  width: 200px;
 }
 
 .header_nav {
-  width: 87%;
+  position: relative;
+  left: 25%;
+}
+
+.navbar-toggler {
+  margin-right: 2%;
 }
 
 .header_nav > ul {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: space-evenly;
   list-style-type: none;
 }
 
 .header_nav a {
   text-decoration: none;
-  margin: 2.5%;
 }
 
 .header_nav li {
@@ -67,7 +82,7 @@ main > div {
   /*Анімації для сторінки Gallery*/
   from {
     top: 0;
-    left: -50%;
+    left: -500px;
   }
   to {
     top: 0;
@@ -78,7 +93,7 @@ main > div {
 @keyframes gallerysidetwo {
   from {
     top: 0;
-    right: -50%;
+    right: -500px;
   }
   to {
     top: 0;
@@ -110,6 +125,7 @@ main > div {
 
 .gallery > img:first-of-type {
   margin-right: 20px;
+  box-sizing: border-box;
 }
 
 .gallery > img {
@@ -128,6 +144,7 @@ main > div {
 .gallery > div > img {
   margin: 1%;
   width: 48%;
+  height: 50%;
   position: relative;
 }
 
@@ -219,17 +236,16 @@ main > div {
 }
 
 .services > .leftside {
-  /* animation: mimi 10s infinite linear;*/
   width: 50%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  height: 55em;
+  height: 50em;
 }
 
 .leftside img {
-  height: 320px;
+  width: 80%;
 }
 
 .leftside > div {
@@ -266,11 +282,12 @@ main > div {
   height: 100%;
   background-image: url("../images/pexels-cottonbro-3998389\ 1.png");
   background-repeat: no-repeat;
-  background-size: 50vw 100vh;
+  background-size: 100% 100%;
 }
 
 .team > .header_team {
-  margin: 2.5vh 0;
+  margin: 2.5vh auto;
+  width: 95%;
   font-weight: 700;
   font-size: 4.8rem;
   line-height: 116px;
@@ -281,16 +298,18 @@ main > div {
 .team > .cards {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 98%;
   margin: auto;
 }
 
 .cards .card {
-  height: 677px;
-  width: 20.5em;
+  height: 70vh;
+  width: 22%;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative;
+  border: 0;
+  border-radius: 40px;
   transition: filter 2s;
 }
 
@@ -312,9 +331,7 @@ main > div {
 
 .cards .nest {
   width: 100%;
-  height: 30%;
-  padding: 1.25em;
-  box-sizing: border-box;
+  height: 0%;
   background: rgba(163, 83, 10, 0.7);
   transform: matrix(1, 0, 0, 1, 0, 0);
   font-family: "Volkhov", serif;
@@ -326,12 +343,13 @@ main > div {
   position: absolute;
   bottom: 0;
   border-radius: 0 0 40px 40px;
-  visibility: hidden;
+  overflow: hidden;
+  transition: all 2s;
 }
 
 .cards .card:hover .nest {
-  visibility: visible;
-  transition: visibility 5s;
+  height: 25%;
+  line-height: 3em;
 }
 .cards:hover .card:not(:hover) {
   filter: brightness(40%);
@@ -339,40 +357,39 @@ main > div {
 
 main .contacts {
   margin-bottom: 0;
-}
-.contacts > div {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  width: 80%;
-  margin: 2% auto;
-  height: 580px;
+  width: 95%;
+  margin: auto;
 }
 
 .contacts .form {
-  width: 51%;
-  height: 570px;
+  padding-top: 1.5%;
+  width: 53%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .contacts .form .form_text {
   font-style: italic;
   font-weight: 700;
-  font-size: 3.2rem;
-  line-height: 76px;
+  font-size: 3.1rem;
   text-align: center;
   color: #000000;
-  width: 90%;
+  position: relative;
 }
 
 .contacts form {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
   background-color: #e5e5e5;
-  margin-top: 3%;
   padding: 3%;
   box-sizing: border-box;
-  height: 405px;
 }
 
 form input {
@@ -393,20 +410,20 @@ form .input_one {
 form .input_two {
   width: 90%;
   margin-top: 3%;
-  padding-bottom: 190px;
+  padding-bottom: 15vh;
 }
 
 .contacts .map {
-  width: 47%;
-  margin-top: 1%;
+  width: 45%;
+  margin-top: 1.5%;
 }
 
 .contacts .contact_footer {
   display: flex;
   justify-content: space-between;
-  width: 80%;
-  margin-top: 2%;
+  width: 95%;
   height: 20vh;
+  margin-top: 6%;
 }
 
 .contacts .contact_footer > div {
@@ -440,17 +457,18 @@ form .input_two {
 
 .contacts .contact_footer > div li {
   list-style-type: none;
+  position: relative;
 }
 
 .contact_footer .li1::before {
   content: "";
   width: 30px;
   height: 30px;
-  left: 79.5%;
   position: absolute;
   background-image: url("../images/pngwing\ 1.png");
   background-repeat: no-repeat;
   background-position: 4px 4px;
+  right: 100%;
 }
 
 .contact_footer .li2::before {
@@ -458,20 +476,20 @@ form .input_two {
   width: 30px;
   height: 30px;
   position: absolute;
-  left: 79.5%;
   background-image: url("../images/pngwing\ 2.png");
   background-repeat: no-repeat;
+  right: 100%;
 }
 
 .contact_footer .li3::before {
   content: "";
   width: 30px;
   height: 30px;
-  left: 79.5%;
   position: absolute;
   background-image: url("../images/pngwing\ 3.png");
   background-repeat: no-repeat;
   background-position: 1px 1px;
+  right: 100%;
 }
 
 body::-webkit-scrollbar {
@@ -487,4 +505,156 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
   border-radius: 10px;
   background-color: #f9f9fd;
+}
+
+@media screen and (min-width: 1620px) {
+  body {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  :root {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .contacts {
+    height: 100%;
+    width: 100%;
+  }
+
+  .contacts .form {
+    width: 85%;
+    margin: 0 auto;
+    order: 1;
+  }
+  .contacts .map {
+    width: 85%;
+    margin: 1% auto;
+    height: 30em;
+    order: 3;
+  }
+  .contacts .contact_footer {
+    order: 2;
+    position: relative;
+    height: 20%;
+  }
+  .team {
+    height: 100%;
+  }
+  .team .header_team {
+    width: 95%;
+  }
+  .team .cards {
+    flex-wrap: wrap;
+  }
+  .team .cards .card {
+    width: 45%;
+    height: 40em;
+    margin-top: 2%;
+  }
+  .services {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100%;
+    width: 100%;
+  }
+  .services .leftside {
+    width: 95%;
+    height: 70em;
+  }
+  .services .rightside {
+    width: 100%;
+    height: 60em;
+    margin: 1% auto;
+    background-size: 100% 100%;
+  }
+  .gallery {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  .gallery > img {
+    width: 39%;
+  }
+  .gallery > div {
+    order: 3;
+    width: 82%;
+    height: 60%;
+  }
+  .gallery:nth-child(3) {
+    order: 1;
+  }
+  .gallery > div > img:nth-of-type(odd) {
+    animation: gallerysideone 2s linear;
+  }
+  .gallery div img:nth-of-type(even) {
+    animation: gallerysidetwo 2s linear;
+  }
+  .cards:hover .card:not(:hover) {
+    filter: brightness(100%);
+  }
+  main > div {
+    margin-top: -15%; /* щоб шапка не перекривала верхню чатину сторінки*/
+    padding-top: 15%;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+  }
+  .navbar .header_logo img {
+    height: 120px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contacts {
+    height: 100%;
+    width: 100%;
+  }
+  .contacts .map {
+    order: 2;
+  }
+  .contacts .contact_footer {
+    order: 3;
+  }
+  .team .cards {
+    flex-wrap: wrap;
+  }
+  .team .cards .card {
+    width: 70%;
+    height: 50em;
+    margin-top: 2%;
+  }
+  .cards:hover .card:not(:hover) {
+    filter: brightness(100%);
+  }
+  .services .rightside {
+    height: 0;
+  }
+  .gallery > img {
+    width: 70%;
+    margin: 1%;
+  }
+  .gallery > div img {
+    width: 80%;
+  }
+  .services .leftside {
+    align-items: flex-start;
+    height: 48em;
+    margin-bottom: 4em;
+  }
+
+  main > div {
+    margin-top: -18%; /* щоб шапка не перекривала верхню чатину сторінки*/
+    padding-top: 18%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  .navbar .header_logo {
+    width: 150px;
+  }
+  .navbar .header_logo img {
+    height: 110px;
+  }
 }
